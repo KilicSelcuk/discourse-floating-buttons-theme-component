@@ -1,17 +1,10 @@
-/*.new-create-topic:hover {
-  width: 50px;
+/**/.new-create-topic:hover, .new-create-image-topic:hover{
+  width: 250px;
 }
-.new-create-image-topic:hover {
-  width: 50px;
-}*/
-.new-create-topic {
+
+.new-create-topic, .new-create-image-topic {
     .d-button-label {
       display: none;
     }
   }
 
-.new-create-image-topic {
-    .d-button-label {
-      display: none;
-    }
-  }
