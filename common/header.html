@@ -7,13 +7,13 @@ api.decorateWidget("header-buttons:after", helper => {
 
   return helper.h('', [
     helper.attach("button", {
-      label: "image_topic",
+      //label: "image_topic",
       className: "new-create-image-topic",
       action: "showLogin",
       icon: "image"
       }),
     helper.attach("button", {
-      label: "selcuk_new_topic.new_topic",
+      //label: "selcuk_new_topic.new_topic",
       className: "new-create-topic",
       action: "showLogin",
       icon: "plus"
@@ -37,7 +37,7 @@ api.decorateWidget("header-buttons:after", helper => {
 
   const createTopicImage = function() {
     const controller = container.lookup("controller:navigation/category"),
-      category = controller.get("category.id"),
+      category = controller.get("category.id") ? controller.get("category.id") : 1,
       topicCategory = container
         .lookup("route:topic")
         .get("context.category.id"),
