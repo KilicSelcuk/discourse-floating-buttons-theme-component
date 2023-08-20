@@ -4,27 +4,20 @@ api.decorateWidget("header-buttons:after", helper => {
   
 
   if (!api.getCurrentUser()){
-  
-    //const buttons = [];
-  const girisyap = function() {
-open({
-      action: "showLogin"
-    });
-  };
 
   return helper.h('', [
-  helper.attach("button", {
-    label: image_topic,
-    className: "new-create-image-topic",
-    action: "showLogin",
-    icon: "image"
-    }),
-  helper.attach("button", {
-    label: "selcuk_new_topic.new_topic",
-    className: "new-create-topic",
-    action: "showLogin",
-    icon: "plus"
-    })
+    helper.attach("button", {
+      label: image_topic,
+      className: "new-create-image-topic",
+      action: "showLogin",
+      icon: "image"
+      }),
+    helper.attach("button", {
+      label: "selcuk_new_topic.new_topic",
+      className: "new-create-topic",
+      action: "showLogin",
+      icon: "plus"
+      })
   ]
   );
   
@@ -36,35 +29,12 @@ open({
     icon: "camera"
     });
 */
-  return helper.h('', [
-  helper.h(
-    "button#new-create-image-topic",
-    {
-      className: "btn btn-default btn btn-icon-text new-create-image-topic",
-      title: "Resimli soru",
-      onclick: loginyap
-    },
-    [iconNode("camera"), helper.h("span.d-button-label", "Resimli soru")]
-  ),
-  helper.h(
-    "button#new-create-topic",
-    {
-      className: "btn btn-default btn btn-icon-text new-create-topic",
-      title: "Yeni konu",
-      onclick: loginyap
-    },
-    [iconNode("plus"), helper.h("span.d-button-label", "Yeni konu")]
-  )
-  ]
-  ); 
   }
 
   let container = api.container,
     composerModal = require("discourse/models/composer").default,
     composerController = container.lookup("controller:composer");
 
-
-  
   const createTopicImage = function() {
     const controller = container.lookup("controller:navigation/category"),
       category = controller.get("category.id"),
@@ -85,7 +55,7 @@ open({
   
   const createTopicNormal = function() {
     const controller = container.lookup("controller:navigation/category"),
-      category = controller.get("category.id"),
+      category = controller.get("category.id") ? controller.get("category.id") : 1,
       topicCategory = container
         .lookup("route:topic")
         .get("context.category.id"),
