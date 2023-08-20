@@ -1,0 +1,127 @@
+<script type="text/discourse-plugin" version="0.8">
+const { iconNode } = require("discourse-common/lib/icon-library");
+api.decorateWidget("header-buttons:after", helper => {
+  
+
+  if (!api.getCurrentUser()){
+  
+    //const buttons = [];
+  const girisyap = function() {
+open({
+      action: "showLogin"
+    });
+  };
+
+  return helper.h('', [
+  helper.attach("button", {
+    label: "selcuk_new_topic.image_topic",
+    className: "new-create-image-topic",
+    action: "showLogin",
+    icon: "camera"
+    }),
+  helper.attach("button", {
+    label: "selcuk_new_topic.new_topic",
+    className: "new-create-topic",
+    action: "showLogin",
+    icon: "plus"
+    })
+  ]
+  );
+  
+  /*
+    return helper.attach("button", {
+    label: "resimli soru",
+    className: "new-create-image-topic",
+    action: "showLogin",
+    icon: "camera"
+    });
+*/
+  return helper.h('', [
+  helper.h(
+    "button#new-create-image-topic",
+    {
+      className: "btn btn-default btn btn-icon-text new-create-image-topic",
+      title: "Resimli soru",
+      onclick: loginyap
+    },
+    [iconNode("camera"), helper.h("span.d-button-label", "Resimli soru")]
+  ),
+  helper.h(
+    "button#new-create-topic",
+    {
+      className: "btn btn-default btn btn-icon-text new-create-topic",
+      title: "Yeni konu",
+      onclick: loginyap
+    },
+    [iconNode("plus"), helper.h("span.d-button-label", "Yeni konu")]
+  )
+  ]
+  ); 
+  }
+
+  let container = api.container,
+    composerModal = require("discourse/models/composer").default,
+    composerController = container.lookup("controller:composer");
+
+
+  
+  const createTopicImage = function() {
+    const controller = container.lookup("controller:navigation/category"),
+      category = controller.get("category.id"),
+      topicCategory = container
+        .lookup("route:topic")
+        .get("context.category.id"),
+      categoryd = topicCategory ? topicCategory : category;
+
+    composerController.open({
+      action: composerModal.CREATE_TOPIC,
+      categoryId: categoryd,
+      tags: ["resimli-soru"],
+      title: "Hızlı resimli soru sor",
+      create_as_post_voting: "true",
+      draftKey: composerModal.DRAFT
+    });
+  };
+  
+  const createTopicNormal = function() {
+    const controller = container.lookup("controller:navigation/category"),
+      category = controller.get("category.id"),
+      topicCategory = container
+        .lookup("route:topic")
+        .get("context.category.id"),
+      categoryd = topicCategory ? topicCategory : category;
+
+    composerController.open({
+      action: composerModal.CREATE_TOPIC,
+      categoryId: categoryd,
+      draftKey: composerModal.DRAFT
+    });
+  };
+
+
+
+
+  return helper.h('', [
+  helper.h(
+    "button#new-create-image-topic",
+    {
+      className: "btn btn-default btn btn-icon-text new-create-image-topic",
+      title: "Resimli soru",
+      onclick: createTopicImage
+    },
+    [iconNode("camera"), helper.h("span.d-button-label", "Resimli soru")]
+  ),
+  helper.h(
+    "button#new-create-topic",
+    {
+      className: "btn btn-default btn btn-icon-text new-create-topic",
+      title: "Yeni konu",
+      onclick: createTopicNormal
+    },
+    [iconNode("plus"), helper.h("span.d-button-label", "Yeni konu")]
+  )
+  ]
+  );
+
+});
+</script>
