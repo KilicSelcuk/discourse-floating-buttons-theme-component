@@ -37,7 +37,7 @@ api.decorateWidget("header-buttons:after", helper => {
 
   const createTopicImage = function() {
     const controller = container.lookup("controller:navigation/category"),
-      category = controller.get("category.id") ? controller.get("category.id") : 1,
+      category = controller.get("category.id") ? controller.get("category.id") : 158,
       topicCategory = container
         .lookup("route:topic")
         .get("context.category.id"),
@@ -46,7 +46,7 @@ api.decorateWidget("header-buttons:after", helper => {
     composerController.open({
       action: composerModal.CREATE_TOPIC,
       categoryId: categoryd,
-      tags: ["resimli-soru"],
+      /*tags: ["resimli-soru"],*/
       title: "Hızlı resimli soru sor",
       create_as_post_voting: "true",
       draftKey: composerModal.DRAFT
