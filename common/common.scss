@@ -7,11 +7,8 @@
     visibility 1s, width 0.2s ease, height 0.5s ease 0.4s, color 0.5s,
     background-color 2s, transform 0.5s;
 }
-
-
 //New Topic Fab
 .new-create-topic {
-  /*
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,43 +27,21 @@
   color: var(--secondary);
   white-space: nowrap;
   overflow: hidden;
-  */
-
-
-    /* display: flex; */
-   // @include buttonShadow;
-    //@include buttonTransition;
-    /* padding: 0; */
-    //margin-bottom: 1px;
-    //width: 40px;
-    //height: 35px;
-    //border-radius: 10px;
-    /* position: fixed; */
-    /* bottom: 120px; */
-    /* right: 10px; */
-    //background-color: var(--tertiary);
-    z-index: 10;
-    align-items: center;
-    justify-content: center;
-    color: var(--secondary);
-    white-space: nowrap;
-    overflow: hidden;
-   
   .d-icon {
     margin: 0;
-    //color: #fff;
-      width: 32px;
-    height: 32px;
+    color: #fff;
   }
 
   &:not(:hover):not(:active):not(:focus) {
     .d-button-label {
-      //opacity: 0;
+      opacity: 0;
       width: 0;
       margin: 0;
     }
+    .d-icon {
+      margin: 0 0.25em;
+    }
   }
- 
 }
 /*.new-create-topic:hover {
   width: 190px;
@@ -77,37 +52,27 @@
 
 //New Topic Fab
 .new-create-image-topic {
-  /* display: flex; */
- /* align-items: center;
+  display: flex;
+  align-items: center;
   justify-content: center;
   @include buttonShadow;
   @include buttonTransition;
   padding: 0;
-    margin-right: 20px;
-    width: 40px;
-    height: 35px;
-  border-radius: 10px;*/
-  /* position: fixed; */
-  /*bottom: 180px;
+  margin: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  position: fixed;
+  bottom: 180px;
   right: 10px;
   z-index: 10;
   background-color: $New_image_topic_button_btn_background;
   color: $New_image_topic_button_btn_color;
   white-space: nowrap;
   overflow: hidden;
-  */
-    z-index: 10;
-    align-items: center;
-    justify-content: center;
-    color: var(--secondary);
-    white-space: nowrap;
-    overflow: hidden;
-   
   .d-icon {
     margin: 0;
-    //color: #fff;
-      width: 32px;
-    height: 32px;
+    color: $New_image_topic_button_btn_icon_color;
   }
 
   &:not(:hover):not(:active):not(:focus) {
@@ -115,6 +80,9 @@
       opacity: 0;
       width: 0;
       margin: 0;
+    }
+    .d-icon {
+      margin: 0 0.25em;
     }
   }
 }
