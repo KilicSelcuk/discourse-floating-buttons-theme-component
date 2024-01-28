@@ -36,18 +36,18 @@
     /* display: flex; */
     align-items: center;
     justify-content: center;
-    @include buttonShadow;
-    @include buttonTransition;
+   // @include buttonShadow;
+    //@include buttonTransition;
     /* padding: 0; */
-    margin-bottom: 1px;
-    width: 40px;
-    height: 35px;
-    border-radius: 10px;
+    //margin-bottom: 1px;
+    //width: 40px;
+    //height: 35px;
+    //border-radius: 10px;
     /* position: fixed; */
     /* bottom: 120px; */
     /* right: 10px; */
     z-index: 10;
-    background-color: var(--tertiary);
+    //background-color: var(--tertiary);
     color: var(--secondary);
     white-space: nowrap;
     overflow: hidden;
@@ -55,6 +55,8 @@
   .d-icon {
     margin: 0;
     //color: #fff;
+      width: 40px;
+    height: 35px;
   }
 
   &:not(:hover):not(:active):not(:focus) {
