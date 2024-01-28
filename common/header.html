@@ -36,15 +36,11 @@ api.decorateWidget("header-buttons:after", helper => {
     composerController = container.lookup("controller:composer");
 
   const createTopicImage = function() {
-    //const controller = container.lookup("controller:navigation/category"),
-    
-    const controller = container.lookup('service:discovery');
-    //category = controller.get("category");
-  
-      category = controller.get("category.id") ? controller.get("category.id") : 158,
+    const controller = container.lookup("service:discovery");
+      category = controller.get("category.id") ? controller.get("category.id") : 158;
       topicCategory = container
         .lookup("route:topic")
-        .get("context.category.id"),
+        .get("context.category.id");
       categoryd = topicCategory ? topicCategory : category;
 
     composerController.open({
