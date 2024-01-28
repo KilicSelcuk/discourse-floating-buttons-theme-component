@@ -75,21 +75,21 @@ api.decorateWidget("header-buttons:after", helper => {
   helper.h(
     "button#new-create-image-topic",
     {
-      className: "icon btn-flat new-create-image-topic",
-      //title: "Resimli soru",
+      className: "icon btn btn-flat new-create-image-topic",
+      title: "Resimli soru",
       onclick: createTopicImage
     },
-    [iconNode("image"), helper.h("span.d-button-label", "")]
+    [iconNode("image"), helper.h("span.d-button-label", "Resimli soru")]
   ),
   helper.h(
     "button#new-create-topic",
     {
       //className: "btn btn-default btn btn-icon-text new-create-topic",
-      className: "icon btn-flat new-create-topic",
-      //title: "Yeni konu",
+      className: "icon btn btn-flat new-create-topic",
+      title: "Yeni konu",
       onclick: createTopicNormal
     },
-    [iconNode("question-circle"), helper.h("span.d-button-label", "")]
+    [iconNode("question-circle"), helper.h("span.d-button-label", "Yeni konu")]
   )
   ]
   );
