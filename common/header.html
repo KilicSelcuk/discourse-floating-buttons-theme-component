@@ -79,7 +79,7 @@ api.decorateWidget("header-buttons:after", helper => {
       title: "Resimli soru",
       onclick: createTopicImage
     },
-    [iconNode("image"), helper.h("span.d-button-label", "Resimli soru")]
+    [iconNode("image"), helper.h("span.d-button-label", "")]
   ),
   helper.h(
     "button#new-create-topic",
@@ -89,7 +89,7 @@ api.decorateWidget("header-buttons:after", helper => {
       title: "Yeni konu",
       onclick: createTopicNormal
     },
-    [iconNode("question-circle"), helper.h("span.d-button-label", "Yeni konu")]
+    [iconNode("question-circle"), helper.h("span.d-button-label", "")]
   )
   ]
   );
