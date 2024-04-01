@@ -1,6 +1,10 @@
 <script type="text/discourse-plugin" version="0.8">
 const { iconNode } = require("discourse-common/lib/icon-library");
   
+  api.headerButtons("button-namef", <template>
+    <li><Button class="icon btn-flat" @href="/u" @icon="address-book" /></li>
+  </template>, { after: “auth” });
+  
 api.decorateWidget("header-buttons:after", helper => {
   
 
