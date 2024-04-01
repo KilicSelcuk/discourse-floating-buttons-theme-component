@@ -2,13 +2,9 @@
 const { iconNode } = require("discourse-common/lib/icon-library");
 
   
-import { apiInitializer } from "discourse/lib/api";
-
-export default apiInitializer("1.0", (api) => {
   api.headerIcons.add("some-unique-name", <template>
     <li><Button class="icon btn-flat" @href="/u" @icon="address-book" /></li>
   </template>);
-});
   
   
 api.decorateWidget("header-buttons:after", helper => {
